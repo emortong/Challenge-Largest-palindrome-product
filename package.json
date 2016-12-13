@@ -11,16 +11,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devleague/Challenge-Largest-palindrome-product.git"
+    "url": "git+https://github.com/devleague/Challenge-Largest-palindrome-product.git"
   },
   "author": "Dev League LLC",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/devleague/Challenge-Largest-palindrome-product/issues"
   },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "globals": [
+      "window"
+    ]
+  },
   "homepage": "https://github.com/devleague/Challenge-Largest-palindrome-product",
   "dependencies": {
     "chai": "^2.3.0",
     "mocha": "^2.2.5"
-  }
+  },
+  "keywords": []
 }
