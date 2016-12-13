@@ -11,26 +11,22 @@ module.exports = function lgPal(digits){
   var palindromeNumber = 0;
   var factorCheck;
   var factorsArr = []
+  var from;
+  var to;
 
 
   // do your work here
   if(digits === 2) {
-    for(var i = 10; i<=99; i++) {
-      for(var x = i+1; x <=99; x++) {
-        factorCheck = x*i;
-        if(isPalindrome(factorCheck)) {
-          factor_0 = i;
-          factor_1 = x;
-          factorsArr.push(factorCheck);
-          console.log(factor_0,factor_1, factorCheck)
-        }
-      }
-    }
+    from = 10;
+    to = 99
+  } else {
+    from = 100;
+    to = 999;
   }
 
-  if(digits === 3) {
-    for(var i = 100; i<=999; i++) {
-      for(var x = i+1; x <=999; x++) {
+
+    for(var i = from; i<= to; i++) {
+      for(var x = i+1; x <=to; x++) {
         factorCheck = x*i;
         if(isPalindrome(factorCheck)) {
           factor_0 = i;
@@ -40,7 +36,20 @@ module.exports = function lgPal(digits){
         }
       }
     }
-  }
+
+  // if(digits === 3) {
+  //   for(var i = 100; i<=999; i++) {
+  //     for(var x = i+1; x <=999; x++) {
+  //       factorCheck = x*i;
+  //       if(isPalindrome(factorCheck)) {
+  //         factor_0 = i;
+  //         factor_1 = x;
+  //         factorsArr.push(factorCheck);
+  //         console.log(factor_0,factor_1, factorCheck)
+  //       }
+  //     }
+  //   }
+  // }
 
 // palindromeNumber = factorsArr[factorsArr.length-1]
 palindromeNumber = getMaxOfArray(factorsArr)
@@ -52,6 +61,8 @@ palindromeNumber = getMaxOfArray(factorsArr)
     palindromeNumber : palindromeNumber
   };
 };
+
+
 
 
 function getMaxOfArray(numArray) {
